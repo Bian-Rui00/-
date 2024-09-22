@@ -1,0 +1,42 @@
+//二叉树算法遍历
+public class BinaryTree {
+    int val;
+    BinaryTree left;
+    BinaryTree right;
+    public BinaryTree(int val){
+        this.val = val;
+    }
+    //前序遍历（根左右）
+    public class BinaryTreeTraversal{
+        public static void preorderTraversal(BinaryTree root){
+            if (root == null){
+                return;
+            }
+            System.out.println(root.val);
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+        }
+    }
+    //中序遍历（左根右）
+    public class InorderTraversal{
+        public static void inorderTraversal(BinaryTree root){
+            if (root == null){
+                return;
+            }
+            inorderTraversal(root.left);
+            System.out.println(root.val);
+            inorderTraversal(root.right);
+        }
+    }
+    //后序遍历（左右根）
+    public class PostorderTraversal{
+        public static void postorderTraversal(BinaryTree root){
+            if (root == null){
+                return;
+            }
+            postorderTraversal(root.left);
+            postorderTraversal(root.right);
+            System.out.println(root.val);
+        }
+    }
+}

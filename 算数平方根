@@ -1,0 +1,37 @@
+/**
+ * 平方根计算器
+ * 方法一：使用内置的Math类的sqrt方法
+ */
+public class SquareRootCalculator {
+    public static void main(String[] args) {
+        int number = 16;
+        double squareRoot = Math.sqrt(number);
+        System.out.println("正整数是："+number+"算数平方根是："+squareRoot);
+    }
+}
+
+/**
+ * 算数平方根
+ * 方法二：二分查找
+ */
+public class SquareRootCalculator2 {
+    public static double sqrt(double number) {
+        if (number ==0 || number ==1){ //1,0的算数平方根是本身
+            return number;
+        }
+        double x = number;
+        double y = 1;
+        double epsilon = 0.0001;        //误差值
+        while (x - y > epsilon){
+            x = (x+y)/2;
+            y = number/x;
+        }
+        return x;
+    }
+
+    public static void main(String[] args) {
+        int number =16;
+        double squareRoot = sqrt(number);
+        System.out.println("正整数是："+number+"算数平方根是："+squareRoot);
+    }
+}

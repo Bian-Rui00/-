@@ -1,0 +1,23 @@
+/**
+ * 递归算法
+ * 打印一个目录下所有的文件名包括子目录中的文件名
+ */
+public class Recursive {
+    public static void Filer(File file){
+      //判断是否为文件
+        if (file.isFile()){ 
+            System.out.println(file.getName());
+              //判断是否为目录
+        }else if (file.isDirectory()){ /
+          //获取目录下的所有文件
+            File[] files=file.listFiles();
+            for (File f:files){
+                Filer(f);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Filer(new File("D:/WeChat"));
+    }
+}

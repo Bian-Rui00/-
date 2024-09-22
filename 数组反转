@@ -1,0 +1,26 @@
+/**
+ * 数组反转 一个数组的倒叙
+ */
+public class ReverseArray {
+    public static void reverse(int[] arr){
+        int start = 0;
+        int end = arr.length - 1;
+        while (start < end){
+            int temp= arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+             //向后移动一位
+            start++;
+            //向前移动一位
+            end--; 
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5,6,7,8,9,10};
+        reverse(arr);
+        for (int i : arr){
+            System.out.print(i+",");
+        }
+    }
+}
